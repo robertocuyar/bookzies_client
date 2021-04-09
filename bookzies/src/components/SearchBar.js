@@ -32,7 +32,7 @@ const SearchBar = ()=> {
         if(bookList.books && bookList.books.length !== 0){
             return bookList.books.map(book => {
                return (
-                   <ListItem onClick={()=> dispatch(chooseBook(book))} key={book.id} button>
+                   <ListItem onClick={()=> dispatch(chooseBook(book))} key={book.bookTitle} button>
                        <ListItemText primary = {book.bookTitle}/>
                    </ListItem>
                )
