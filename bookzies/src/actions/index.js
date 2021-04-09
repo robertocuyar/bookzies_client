@@ -3,7 +3,7 @@ import {booksCall} from "../api/books";
 
 export const searchBooks = (search)=> async dispatch => {
 const response = await booksCall(search);
-dispatch({type: SEARCH_BOOKS, payload: response.then(data => data)});
+dispatch({type: SEARCH_BOOKS, payload:{term: search, books: response}});
 }
 
 export const chooseBook = book => {

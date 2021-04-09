@@ -9,6 +9,5 @@ test("Reducers index.js is defined", ()=>{
 test("Reducer index contains all reducers in app", ()=>{
    let storeTest = createStore(index).getState();
 
-   expect(storeTest.books).toEqual([]);
-   expect(storeTest.choice).toEqual({});
+   expect(storeTest.books).toEqual({});
 })

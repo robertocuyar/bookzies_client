@@ -3,7 +3,7 @@ import {makeStyles} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import NavBar from './NavBar';
 import Splash from './Splash';
-import SearchBar from '\./SearchBar';
+import SearchBar from './SearchBar';
 const useStyles = makeStyles((theme)=>({
     root: {
         flexGrow: 1,
