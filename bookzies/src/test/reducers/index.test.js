@@ -5,3 +5,10 @@ import {createStore} from "redux";
 test("Reducers index.js is defined", ()=>{
    expect(index).toBeDefined();
 });
+
+test("Reducer index contains all reducers in app", ()=>{
+   let storeTest = createStore(index).getState();
+
+   expect(storeTest.books).toEqual([]);
+   expect(storeTest.choice).toEqual({});
+})

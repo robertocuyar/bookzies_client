@@ -1,10 +1,11 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 
 const Splash = ()=>{
     return (
-        <div>
+        <Grid item>
             Splash
-        </div>
+        </Grid>
     )
 }
 

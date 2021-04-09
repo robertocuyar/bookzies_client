@@ -17,10 +17,10 @@ const App = ()=>{
                 <Grid item xs={12}>
                     <NavBar/>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item container alignItems={'center'} justify={'center'} xs={12}>
                     <Splash/>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item container alignItems={'center'} justify={'center'} xs={12}>
                     <SearchBar/>
                 </Grid>
             </Grid>
