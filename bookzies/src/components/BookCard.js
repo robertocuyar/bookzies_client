@@ -9,7 +9,7 @@ import {nameChange} from "../util/nameChange";
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 450,
     },
     media: {
         height: 200,

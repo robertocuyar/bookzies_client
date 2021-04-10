@@ -1,6 +1,7 @@
-.search-bar{
-    border: 1px black solid;
-}
 .search-in{
     width: 100% !important;
+    background-color: white;
+}
+html {
+    background: url(../img/notebook.png);
 }

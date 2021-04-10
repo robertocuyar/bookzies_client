@@ -1,20 +1,19 @@
 import {expect} from '@jest/globals';
 import React from 'react';
-import NavBar from '../../components/NavBar';
+import Logo from '../../components/Logo';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
 import {shallow, configure} from 'enzyme';
-import Typography from '@material-ui/core/Typography';
-
-test("NavBar.js is defined", ()=>{
-    expect(NavBar).toBeDefined();
+import logoImg from '../../img/Bookzies.png'
+test("Logo.js is defined", ()=>{
+    expect(Logo).toBeDefined();
 });
 configure({ adapter: new Adapter()});
 
-describe ("Navbar", ()=>{
+describe ("Logo", ()=>{
     let wrapper;
 
     beforeEach(()=>{
-        wrapper = shallow(<NavBar/>)
+        wrapper = shallow(<Logo/>)
     });
 
     it("renders correctly", ()=>{
@@ -22,6 +21,6 @@ describe ("Navbar", ()=>{
     });
 
     it("Contains app name", ()=>{
-        expect(wrapper.containsAnyMatchingElements([<Typography>Bookzies</Typography>])).toEqual(true);
+        expect(wrapper.containsAnyMatchingElements([<img src={logoImg} alt="Bookzies"/>])).toEqual(true);
     });
 });

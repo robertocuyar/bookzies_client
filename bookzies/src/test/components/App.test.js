@@ -3,7 +3,7 @@ import React from 'react';
 import App from "../../components/App";
 import {configure, shallow} from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import NavBar from '../../components/NavBar';
+import NavBar from '../../components/Logo';
 import Splash from '../../components/Splash';
 import SearchBar from "../../components/SearchBar";
 

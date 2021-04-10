@@ -7,7 +7,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText'
 import FormControl from '@material-ui/core/FormControl';
 import {useSelector, useDispatch} from "react-redux";
-import {searchBooks, chooseBook} from "../actions";
+import {searchBooks, chooseBook} from '../actions';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     margin: {
         margin: theme.spacing(2),
     },
+    search: {
+        marginBottom: theme.spacing(6),
+    }
 }));
 
 const SearchBar = ()=> {
@@ -30,9 +34,9 @@ const SearchBar = ()=> {
 
     const resultsDisplay = ()=>{
         if(bookList.books && bookList.books.length !== 0){
-            return bookList.books.map(book => {
+            return bookList.books.map((book, index) => {
                return (
-                   <ListItem onClick={()=> dispatch(chooseBook(book))} key={book.bookTitle} button>
+                   <ListItem onClick={()=> dispatch(chooseBook(book))} key={index} button>
                        <ListItemText primary = {book.bookTitle}/>
                    </ListItem>
                )
@@ -42,7 +46,9 @@ const SearchBar = ()=> {
         }
     }
     return (
-        <Grid item xs={6} container className={'search-bar'}>
+        <Grid item xs={6} container className={classes.search}>
+            <Box borderColor="grey.500" borderRadius={16} border={1} className={'search-in'}>
+                <Grid container>
             <FormControl fullWidth className={classes.margin}>
                 <Input
                     id="standard-adornment-amount"
@@ -55,6 +61,8 @@ const SearchBar = ()=> {
                 {resultsDisplay()}
             </List>
             </div>
+                </Grid>
+            </Box>
         </Grid>
     )
 }
