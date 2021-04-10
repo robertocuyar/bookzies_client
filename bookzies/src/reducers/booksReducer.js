@@ -2,7 +2,7 @@ import {SEARCH_BOOKS} from "../actions/types";
 import {CHOSEN_BOOK} from "../actions/types";
 
 export const booksReducer = (state = {}, action) => {
-    switch(action.type){
+    switch (action.type) {
         case SEARCH_BOOKS:
             return {...state, term: action.payload.term, books: action.payload.books};
         case CHOSEN_BOOK:

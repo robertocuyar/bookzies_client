@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -16,8 +16,9 @@ const useStyles = makeStyles({
     },
 });
 
-const BookCard = ({choice}) =>{
+const BookCard = ({choice}) => {
     const classes = useStyles();
+    // Converts '|' found in api data into ', '
     const authors = nameChange(choice.bookAuthors, '|');
     return (
         <Card className={classes.root}>

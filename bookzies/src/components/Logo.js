@@ -16,15 +16,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Logo = ()=>{
+const Logo = () => {
     const classes = useStyles();
 
     return (
-     <Grid container justify={'center'} alignItems={'center'} className={classes.root}>
-         <Grid item>
-             <img src={logoImg} alt="Bookzies"/>
-         </Grid>
-     </Grid>
+        <Grid container justify={'center'} alignItems={'center'} className={classes.root}>
+            <Grid item>
+                <img src={logoImg} alt="Bookzies"/>
+            </Grid>
+        </Grid>
 
     );
 };

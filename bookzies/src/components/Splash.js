@@ -4,11 +4,11 @@ import BookCard from "./BookCard";
 import {useSelector} from "react-redux";
 import Typography from '@material-ui/core/Typography';
 
-const Splash = ()=>{
+const Splash = () => {
     const book = useSelector(state => state.books);
 
-    const splashDisplay = ()=>{
-        if (book.chosen){
+    const splashDisplay = () => {
+        if (book.chosen) {
             return (
                 <BookCard choice={book.chosen}/>
             )

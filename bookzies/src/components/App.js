@@ -5,18 +5,20 @@ import Logo from './Logo';
 import Splash from './Splash';
 import SearchBar from './SearchBar';
 import {booksCall} from "../api/books"
-const useStyles = makeStyles((theme)=>({
+
+const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     }
 }));
-const App = ()=>{
+const App = () => {
     const classes = useStyles();
+    //Random api call to ready up server
     booksCall("Book");
 
     return (
         <div className={classes.root}>
-            <Grid container spacing ={3}>
+            <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Logo/>
                 </Grid>
