@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import BookCard from "./BookCard";
 import {useSelector} from "react-redux";
