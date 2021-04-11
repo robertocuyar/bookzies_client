@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Grid from '@material-ui/core/Grid';
 import {makeStyles} from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText'
 import FormControl from '@material-ui/core/FormControl';
 import {useSelector, useDispatch} from "react-redux";
-import {searchBooks, chooseBook} from '../actions';
+import {searchBooks, chooseBook, resetTerm, changeTerm, resetBooks} from '../actions';
 import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     searchIn: {
         width: '100%',
         backgroundColor: 'white'
-}
+    }
 }));
 
 const SearchBar = () => {
@@ -35,6 +35,20 @@ const SearchBar = () => {
     const bookList = useSelector(state => state.books);
     const dispatch = useDispatch();
     let term = bookList.term || "";
+
+    useEffect(() => {
+        if (bookList.term && bookList.term !== "" && !bookList.followChoice) {
+            const timerId = setTimeout(() => {
+                dispatch(searchBooks(bookList.term));
+            }, 500);
+
+            return () => {
+                clearTimeout(timerId);
+            }
+        } else if (bookList.term === "" && bookList.books.length > 0) {
+            dispatch(resetBooks());
+        }
+    })
 
     const resultsDisplay = () => {
         if (bookList.books && bookList.books.length !== 0) {
@@ -57,7 +71,7 @@ const SearchBar = () => {
                         <Input
                             id="standard-adornment-amount"
                             value={term}
-                            onChange={(e) => dispatch(searchBooks(e.target.value))}
+                            onChange={(e) => dispatch(changeTerm(e.target.value))}
                         />
                     </FormControl>
                     <div className={classes.list}>
