@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText'
 import FormControl from '@material-ui/core/FormControl';
 import {useSelector, useDispatch} from "react-redux";
-import {searchBooks, chooseBook, resetTerm, changeTerm, resetBooks} from '../actions';
+import {searchBooks, chooseBook, changeTerm, resetBooks} from '../actions';
 import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
