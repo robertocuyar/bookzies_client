@@ -3,6 +3,9 @@
 ## Project Description
 This the client for our Bookzies services. Provides a search for books located in our Bookzies database! You can also see more description on a chosen book from the autofill results.
 
+## Backend Git Repo:
+[https://github.com/robertocuyar/bookzies](https://github.com/robertocuyar/bookzies)
+
 ## How to run
 
 Bookzies client is built using Create-React_App. In the project directory, you can run:
