@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import Typography from '@material-ui/core/Typography';
 
 const Splash = () => {
-    const book = useSelector(state => state.books);
+    const book = useSelector(state => state.booksAll);
 
     const splashDisplay = () => {
         if (book.chosen) {
