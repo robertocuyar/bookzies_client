@@ -32,12 +32,12 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchBar = () => {
     const classes = useStyles();
-    const bookList = useSelector(state => state.books);
+    const bookList = useSelector(state => state.booksAll);
     const dispatch = useDispatch();
     let term = bookList.term || "";
 
     useEffect(() => {
-        if (bookList.term && bookList.term !== "" && !bookList.followChoice) {
+        if (term !== "" && !bookList.followChoice && bookList.previousTerm !== term) {
             const timerId = setTimeout(() => {
                 dispatch(searchBooks(bookList.term));
             }, 500);
@@ -45,7 +45,7 @@ const SearchBar = () => {
             return () => {
                 clearTimeout(timerId);
             }
-        } else if (bookList.term === "" && bookList.books.length > 0) {
+        } else if(term === "" && bookList.followChoice) {
             dispatch(resetBooks());
         }
     })
